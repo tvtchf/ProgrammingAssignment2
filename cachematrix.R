@@ -14,8 +14,8 @@ makeCacheMatrix <- function(x = matrix()) {
         
         #set function: store matrix to the cash environment 
         set <- function(y) {
-                x <<- y             #set x in "cash" environment
-                inverse <<- NULL    #set inverse in "cash" environment
+                x <<- y             #set x in cash environment
+                inverse <<- NULL    #set inverse in cash environment
         }
         
         #get matrix from cash environment
@@ -41,6 +41,7 @@ cacheSolve <- function(x, ...) {
         inv <- x$getinverse() # get NULL or inverse matrix
         
         if(!is.null(inv)) {
+                
                 #return inverse matrix from cash environment         
                 message("getting cached data")
                 return(inv)
